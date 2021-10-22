@@ -1,5 +1,7 @@
 .home {
     padding: 20px 40px;
+    height: -webkit-fill-available;
+    background-color: #dbf3fb;
     .body {
         display: flex;
         gap: 0 20px;
