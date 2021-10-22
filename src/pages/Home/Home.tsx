@@ -7,13 +7,7 @@ import "./Home.scss";
 
 const Home: React.FC = () => {
     const socket = useSocket();
-    // socket.on('message', handleSocketDataChange)
-    const handleSocketDataChange = (response: TableItemTypes[]) => {
-        console.log(response);
-    }
-    useEffect(() => {
-        console.log('socket changed')
-    }, [socket])
+
     return (
         <div className="home">
             <header>
