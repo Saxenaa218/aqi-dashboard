@@ -1,12 +1,12 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import HistoryChart from '../../components/HistoryChart';
 import Table from '../../components/Table';
-import { TableItemTypes } from '../../components/Table/types';
 import { useSocket } from '../../hooks';
 import "./Home.scss";
 
 const Home: React.FC = () => {
     const socket = useSocket();
+    console.log(socket)
 
     return (
         <div className="home">
