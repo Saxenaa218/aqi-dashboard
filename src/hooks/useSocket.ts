@@ -1,15 +1,9 @@
 import { useState, useEffect } from 'react';
-import io from 'socket.io-client';
 
 export const useSocket = () => {
-    const [socket, setSocket] = useState();
+    const [socket, setSocket] = useState<WebSocket>();
     useEffect(() => {
-        const newSocket: any = io(
-            "ws://city-ws.herokuapp.com",
-            {
-                transports: ['websocket']
-            }
-        )
+        const newSocket = new WebSocket("ws://city-ws.herokuapp.com");
         setSocket(newSocket);
         return () => newSocket.close();
     }, [])

@@ -4,6 +4,7 @@ import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 import { StateTypes } from '../../redux'; 
 import { TableItemTypes } from '../Table/types';
+import { getTimeForChart } from '../../utils';
 import "./HistoryChart.scss";
 
 const HistoryChart: React.FC = () => {
@@ -17,17 +18,17 @@ const HistoryChart: React.FC = () => {
     }, [historyObject])
     
     useEffect(() => {
-        const totalAqis = [];
+        const allTimeStamps = [];
         for (const each of Object.keys(historyObject)) {
-            totalAqis.push(...historyObject[each].map((itm: TableItemTypes) => itm.timeStamp));
+            allTimeStamps.push(...historyObject[each].map((itm: TableItemTypes) => getTimeForChart(itm.timeStamp)));
         }
-        setCategories(totalAqis);
-    }, [])
+        setCategories(allTimeStamps);
+    }, [historyObject])
 
     const createSeries = () => {
         const baseStructure = {
-            type: "line",
-            color: 'blue',
+            type: "spline",
+            color: 'grey',
             dashStyle: 'Solid',
             showInLegend: true,
             marker: {
@@ -60,12 +61,15 @@ const HistoryChart: React.FC = () => {
                 text: 'AQI (Air quality index)'
             }
         },
+        tooltip: {
+            borderColor: '#2c3e50'
+        },
         plotOptions: {
             line: {
                 dataLabels: {
                     enabled: true
                 },
-                enableMouseTracking: false
+                enableMouseTracking: true
             }
         },
         series: series,
