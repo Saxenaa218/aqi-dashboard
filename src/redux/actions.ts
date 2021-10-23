@@ -8,11 +8,15 @@ export const setHistoryObject = (socketResp: TableItemTypes[]) => {
   for (const each of socketResp) {
     // using 10 length as a barrier for the queue
     const eachObject = { ...each, timeStamp: Date.now() };
-    if (resultObject[each.city].length === 10) {
+    if (resultObject[each.city]?.length === 10) {
       resultObject[each.city].shift();
       resultObject[each.city].push(eachObject);
     }
+    else if (resultObject[each.city]?.length<10) {
+      resultObject[each.city].push(eachObject);
+    }
     else {
+      resultObject[each.city] = [];
       resultObject[each.city].push(eachObject);
     }
   }
