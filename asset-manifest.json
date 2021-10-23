@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/aqi-dashboard/static/css/main.4808d1c1.chunk.css",
-    "main.js": "/aqi-dashboard/static/js/main.471315ae.chunk.js",
-    "main.js.map": "/aqi-dashboard/static/js/main.471315ae.chunk.js.map",
+    "main.js": "/aqi-dashboard/static/js/main.5a583869.chunk.js",
+    "main.js.map": "/aqi-dashboard/static/js/main.5a583869.chunk.js.map",
     "runtime-main.js": "/aqi-dashboard/static/js/runtime-main.6b708176.js",
     "runtime-main.js.map": "/aqi-dashboard/static/js/runtime-main.6b708176.js.map",
     "static/js/2.91c34ae7.chunk.js": "/aqi-dashboard/static/js/2.91c34ae7.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.6b708176.js",
     "static/js/2.91c34ae7.chunk.js",
     "static/css/main.4808d1c1.chunk.css",
-    "static/js/main.471315ae.chunk.js"
+    "static/js/main.5a583869.chunk.js"
   ]
 }
